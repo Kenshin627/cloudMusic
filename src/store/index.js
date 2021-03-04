@@ -5,8 +5,16 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    profile: {
+    
+    },
+    token: null
   },
   mutations: {
+    setProfile: (state,payload)=> {
+      state.token = payload.token
+      state.profile = payload.profile
+    }
   },
   actions: {
   },
