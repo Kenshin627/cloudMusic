@@ -1,11 +1,12 @@
 import axios from 'axios'
-
+// axios.defaults.withCredentials=true
 const Axios = axios.create({
     baseURL: 'http://localhost:3000/'
 })
+//axios.defaults.withCredentials=true
+// Axios.defaults.withCredentials = true
 Axios.interceptors.request.use(
     config => {
-        console.log(config)
         if(config.url !== '/login'){
             config.headers.Authorization = `Bearer ${localStorage.getItem('token') || ''}`
         }

@@ -14,6 +14,7 @@ export default new Vuex.Store({
     setProfile: (state,payload)=> {
       state.token = payload.token
       state.profile = payload.profile
+      localStorage.setItem('token',payload.token)
     }
   },
   actions: {
