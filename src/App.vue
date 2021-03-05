@@ -83,7 +83,7 @@
               >
                 <img :src="musicPic" alt="alt" class="musicPic">
               </v-avatar>
-            <v-progress-linear :value="playProgress" background-color="grey darken-3" color="red darken-2" class=""></v-progress-linear>
+            <v-progress-linear :value="playProgress" background-color="grey darken-3" color="red darken-2" class="playProgerss" @change="changeProgress(num)"></v-progress-linear>
           </v-col>
           <v-col cols="2" align-self="center" justify="space-around">
             <v-row>
@@ -230,6 +230,9 @@ export default {
 
       this.musicUrl = data.data[0].url
       this.isPause = false
+    },
+    changeProgress(num) {
+      this.playProgress = num
     } 
   }
 }
